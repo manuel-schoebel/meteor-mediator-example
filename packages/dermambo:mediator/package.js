@@ -3,15 +3,10 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  var both = ["client", "server"];
-  
-  api.use('coffeescript', both);
+  api.versionsFrom('METEOR@0.9.3');
+  api.use('coffeescript');
   api.use('deps', 'client');
-  
   api.use('underscore', 'client');
-
-  
-  api.add_files("mediator.coffee", both);
-
+  api.add_files("mediator.coffee");
   api.export('Mediator');
 });

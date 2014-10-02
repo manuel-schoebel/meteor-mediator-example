@@ -3,18 +3,14 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  var both = ['client', 'server'];
-
-  api.use('coffeescript', both);
-  api.use('deps', both);
-  api.use('mediator', both);
-
+  api.versionsFrom('METEOR@0.9.3');
+  api.use('coffeescript');
+  api.use('deps');
+  api.use('dermambo:mediator');
   api.use('templating', 'client');
   api.use('handlebars', 'client');
   api.use('underscore', 'client');
-
-  api.add_files('my_module_common.coffee', both);
-
+  api.add_files('my_module_common.coffee');
   api.add_files('my_module_server.coffee', 'server');
   api.add_files("my_module.html", "client");
   api.add_files("my_module.coffee", "client");
